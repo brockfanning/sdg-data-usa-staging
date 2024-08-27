@@ -15,6 +15,17 @@
             "type": "integer"
           },
           {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y15T19",
+                "Y10T14",
+                ""
+              ]
+            }
+          },
+          {
             "name": "Value",
             "type": "number"
           }

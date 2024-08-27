@@ -15,6 +15,58 @@
             "type": "integer"
           },
           {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            }
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y_GE16",
+                "Y16T64",
+                "Y16T19",
+                "Y_GE20",
+                "Y20T24",
+                "Y_GE25",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
+                "Y55T64",
+                "Y_GE65",
+                ""
+              ]
+            }
+          },
+          {
+            "name": "DISABILITY_STATUS",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "PD",
+                "PWD",
+                ""
+              ]
+            }
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            }
+          },
+          {
             "name": "Value",
             "type": "number"
           }

@@ -16,6 +16,38 @@
             "title": "Année"
           },
           {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y_GE16",
+                "Y16T19",
+                "Y_GE20",
+                "Y20T24",
+                "Y_GE25",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
+                "Y55T64",
+                "Y_GE65",
+                ""
+              ]
+            },
+            "title": "AGE"
+          },
+          {
             "name": "Value",
             "type": "integer",
             "title": "Value"

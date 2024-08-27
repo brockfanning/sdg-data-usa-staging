@@ -16,6 +16,18 @@
             "title": "Año"
           },
           {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y15T19",
+                "Y10T14",
+                ""
+              ]
+            },
+            "title": "AGE"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"

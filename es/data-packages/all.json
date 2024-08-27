@@ -66,10 +66,11 @@
             "title": "Año"
           },
           {
-            "name": "source",
+            "name": "Series",
             "type": "string",
             "constraints": {
               "enum": [
+                "crnt_rcpts",
                 "crnt_tx_rcpts",
                 "ctrbtns_govt_soc_ins",
                 "inc_rcpts_asts",
@@ -78,7 +79,18 @@
                 ""
               ]
             },
-            "title": "source"
+            "title": "Series"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -106,7 +118,7 @@
           },
           {
             "name": "Value",
-            "type": "number",
+            "type": "integer",
             "title": "Value"
           }
         ]
@@ -393,31 +405,31 @@
             "title": "Año"
           },
           {
-            "name": "Sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "Male",
-                "Female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "Sex"
+            "title": "SEX"
           },
           {
-            "name": "Income",
+            "name": "INCOME_WEALTH_QUANTILE",
             "type": "string",
             "constraints": {
               "enum": [
-                "Low quintile",
-                "Middle low quintile",
-                "Middle quintile",
-                "Middle high quintile",
-                "High quintile",
+                "Q1",
+                "Q2",
+                "Q3",
+                "Q4",
+                "Q5",
                 ""
               ]
             },
-            "title": "Income"
+            "title": "INCOME_WEALTH_QUANTILE"
           },
           {
             "name": "Value",
@@ -444,16 +456,16 @@
             "title": "Año"
           },
           {
-            "name": "education",
+            "name": "EDUCATION_LEV",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_b_1_basic",
-                "i4_b_1_higher",
+                "basic",
+                "higher",
                 ""
               ]
             },
-            "title": "education"
+            "title": "EDUCATION_LEV"
           },
           {
             "name": "Value",
@@ -480,43 +492,43 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_4_1_tech_male",
-                "i4_4_1_tech_female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "age",
+            "name": "AGE",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_4_1_tech_24",
-                "i4_4_1_tech_34",
-                "i4_4_1_tech_44",
-                "i4_4_1_tech54",
-                "i4_4_1_tech_65",
+                "Y0T24",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
+                "Y55T65",
                 ""
               ]
             },
-            "title": "age"
+            "title": "AGE"
           },
           {
-            "name": "income",
+            "name": "INCOME_WEALTH_QUANTILE",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_4_1_tech_lowinc",
-                "i4_4_1_tech_highinc",
+                "Q1",
+                "Q5",
                 ""
               ]
             },
-            "title": "income"
+            "title": "INCOME_WEALTH_QUANTILE"
           },
           {
             "name": "Value",
@@ -663,6 +675,17 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Current Dollars",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -709,6 +732,17 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -759,8 +793,43 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Total",
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
+            "name": "Treatment Method",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "DEEPWELL / UNDERGROUND INJECTION",
+                "ENERGY RECOVERY",
+                "FUEL BLENDING",
+                "INCINERATION",
+                "LAND TREATMENT / APPLICATION",
+                "LANDFILL",
+                "METALS RECOVERY",
+                "OTHER RECOVERY",
+                "OTHER TREATMENT",
+                "SLUDGE TRTMNT / STAB / ENCAP",
+                "SOLVENTS RECOVERY",
+                "SURF. IMP. CLOSED AS LANDFILL",
+                "WASTEWATER TREATMENT",
+                ""
+              ]
+            },
+            "title": "Treatment Method"
+          },
+          {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -999,7 +1068,7 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
@@ -1008,21 +1077,21 @@
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "age",
+            "name": "AGE",
             "type": "string",
             "constraints": {
               "enum": [
-                "13_24_y",
-                "25_34_y",
-                "35_44_y",
-                "45_54_y",
+                "Y13T24",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
                 ""
               ]
             },
-            "title": "age"
+            "title": "AGE"
           },
           {
             "name": "race_ethnicity",
@@ -1422,29 +1491,29 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "male",
-                "female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "age",
+            "name": "AGE",
             "type": "string",
             "constraints": {
               "enum": [
-                "under_18_years",
-                "18_to_64_years",
-                "65_and_over",
+                "Y0T17",
+                "Y18T64",
+                "Y_GE65",
                 ""
               ]
             },
-            "title": "age"
+            "title": "AGE"
           },
           {
             "name": "Value",
@@ -1544,7 +1613,7 @@
           },
           {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -1615,6 +1684,62 @@
             "title": "Año"
           },
           {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y_GE16",
+                "Y16T64",
+                "Y16T19",
+                "Y_GE20",
+                "Y20T24",
+                "Y_GE25",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
+                "Y55T64",
+                "Y_GE65",
+                ""
+              ]
+            },
+            "title": "AGE"
+          },
+          {
+            "name": "DISABILITY_STATUS",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "PD",
+                "PWD",
+                ""
+              ]
+            },
+            "title": "DISABILITY_STATUS"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -1661,6 +1786,18 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Measure",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Disbursements",
+                "Commitments",
+                ""
+              ]
+            },
+            "title": "Measure"
           },
           {
             "name": "Value",
@@ -1735,31 +1872,31 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "male",
-                "female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "income",
+            "name": "INCOME_WEALTH_QUANTILE",
             "type": "string",
             "constraints": {
               "enum": [
-                "low",
-                "middle low",
-                "middle",
-                "middle high",
-                "high",
+                "Q1",
+                "Q2",
+                "Q3",
+                "Q4",
+                "Q5",
                 ""
               ]
             },
-            "title": "income"
+            "title": "INCOME_WEALTH_QUANTILE"
           },
           {
             "name": "Value",
@@ -1810,6 +1947,52 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y15T19",
+                "Y20T24",
+                "Y25T29",
+                "Y30T34",
+                "Y35T39",
+                "Y40T44",
+                "Y45T49",
+                "Y50T54",
+                "Y55T59",
+                "Y60T64",
+                "Y65T69",
+                "Y70T74",
+                "75 or older",
+                ""
+              ]
+            },
+            "title": "AGE"
+          },
+          {
             "name": "Value",
             "type": "integer",
             "title": "Value"
@@ -1858,8 +2041,31 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
+            "name": "Series",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Lakes",
+                "Rivers",
+                ""
+              ]
+            },
+            "title": "Series"
+          },
+          {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -1880,6 +2086,17 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -1906,6 +2123,26 @@
             "title": "Año"
           },
           {
+            "name": "Unnamed: 2",
+            "type": "number",
+            "constraints": {
+              "enum": [
+                ""
+              ]
+            },
+            "title": "Unnamed: 2"
+          },
+          {
+            "name": "Unnamed: 3",
+            "type": "number",
+            "constraints": {
+              "enum": [
+                ""
+              ]
+            },
+            "title": "Unnamed: 3"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -1930,16 +2167,16 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "males",
-                "females",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
             "name": "Value",
@@ -2038,20 +2275,20 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "male",
-                "female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -2543,8 +2780,33 @@
         "fields": [
           {
             "name": "Year",
-            "type": "integer",
+            "type": "string",
             "title": "Año"
+          },
+          {
+            "name": "Series",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Incidence rate of fatal occupational injuries",
+                "Incidence rate of nonfatal cases of injuries and illnesses involving days away from work",
+                "Annualized incidence rate of nonfatal cases of injuries and illnesses involving days away from work",
+                ""
+              ]
+            },
+            "title": "Series"
+          },
+          {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
           },
           {
             "name": "Value",
@@ -2572,7 +2834,7 @@
           },
           {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -2713,6 +2975,17 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -2919,8 +3192,19 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "lbs/person",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -3183,30 +3467,32 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "female",
-                "male",
+                "F",
+                "M",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "age",
+            "name": "AGE",
             "type": "string",
             "constraints": {
               "enum": [
-                "lt_20_yrs",
-                "20_29_yrs",
-                "40_59_yrs",
-                "gt_59_yrs",
+                "Y0T19",
+                "Y20T29",
+                "Y30T39",
+                "Y40T49",
+                "Y50T59",
+                "Y_GE60",
                 ""
               ]
             },
-            "title": "age"
+            "title": "AGE"
           },
           {
             "name": "race_ethnicity",
@@ -3272,42 +3558,42 @@
             "title": "Año"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_7_1_male",
-                "i4_7_1_female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "disability_status",
+            "name": "DISABILITY_STATUS",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_7_1_disabilities",
-                "i4_7_1_nodisabilities",
+                "PD",
+                "PWD",
                 ""
               ]
             },
-            "title": "disability_status"
+            "title": "DISABILITY_STATUS"
           },
           {
-            "name": "urbanicity",
+            "name": "URBANISATION",
             "type": "string",
             "constraints": {
               "enum": [
-                "i4_7_1_urban",
-                "i4_7_1_suburban",
-                "i4_7_1_town",
-                "i4_7_1_rural",
+                "U",
+                "TSUB",
+                "CITY",
+                "R",
                 ""
               ]
             },
-            "title": "urbanicity"
+            "title": "URBANISATION"
           },
           {
             "name": "Value",
@@ -3404,6 +3690,17 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -3548,6 +3845,50 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Series",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Household activities (includes travel)",
+                "Caring for and helping household members (includes travel)",
+                "Caring for and helping nonhousehold members (includes travel)",
+                "Purchasing goods and services (includes travel)",
+                ""
+              ]
+            },
+            "title": "Series"
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y_GE15",
+                "Y15T24",
+                "Y25T34",
+                "Y25T54",
+                "Y35T44",
+                "Y45T54",
+                "Y55T64",
+                "Y_GE65",
+                ""
+              ]
+            },
+            "title": "AGE"
+          },
+          {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
           },
           {
             "name": "Value",
@@ -3790,6 +4131,38 @@
             "title": "Año"
           },
           {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y_GE16",
+                "Y16T19",
+                "Y_GE20",
+                "Y20T24",
+                "Y_GE25",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
+                "Y55T64",
+                "Y_GE65",
+                ""
+              ]
+            },
+            "title": "AGE"
+          },
+          {
             "name": "Value",
             "type": "integer",
             "title": "Value"
@@ -3839,7 +4212,7 @@
           },
           {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -3983,7 +4356,7 @@
           },
           {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -4004,6 +4377,17 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -4078,6 +4462,30 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Rate",
+                "Total",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
+            "name": "SEX",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "M",
+                "F",
+                ""
+              ]
+            },
+            "title": "SEX"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -4148,6 +4556,30 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Series",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "pct_GDP",
+                "per_capita",
+                ""
+              ]
+            },
+            "title": "Series"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                "Chained 2017 dollars",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -4462,6 +4894,17 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -4582,6 +5025,17 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -4700,6 +5154,18 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "AGE",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Y15T19",
+                "Y10T14",
+                ""
+              ]
+            },
+            "title": "AGE"
           },
           {
             "name": "Value",
@@ -4844,6 +5310,29 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Series",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "pct_change",
+                ""
+              ]
+            },
+            "title": "Series"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -5158,7 +5647,7 @@
             "title": "Año"
           },
           {
-            "name": "education",
+            "name": "EDUCATION_LEV",
             "type": "string",
             "constraints": {
               "enum": [
@@ -5167,47 +5656,47 @@
                 ""
               ]
             },
-            "title": "education"
+            "title": "EDUCATION_LEV"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "male",
-                "female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
-            "name": "age",
+            "name": "AGE",
             "type": "string",
             "constraints": {
               "enum": [
-                "less than 25",
-                "25 to 34",
-                "35 to 44",
-                "45 to 54",
-                "55 to 64",
+                "Y0T24",
+                "Y25T34",
+                "Y35T44",
+                "Y45T54",
+                "Y55T64",
                 ""
               ]
             },
-            "title": "age"
+            "title": "AGE"
           },
           {
-            "name": "income",
+            "name": "INCOME_WEALTH_QUANTILE",
             "type": "string",
             "constraints": {
               "enum": [
-                "low quartile",
-                "mid quartile",
-                "high quartile",
+                "Q1",
+                "Q3",
+                "Q5",
                 ""
               ]
             },
-            "title": "income"
+            "title": "INCOME_WEALTH_QUANTILE"
           },
           {
             "name": "Value",
@@ -5259,7 +5748,7 @@
           },
           {
             "name": "Value",
-            "type": "integer",
+            "type": "number",
             "title": "Value"
           }
         ]
@@ -5438,6 +5927,17 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -5606,6 +6106,17 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Current Dollars",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -5676,6 +6187,17 @@
             "name": "Year",
             "type": "integer",
             "title": "Año"
+          },
+          {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Percent",
+                ""
+              ]
+            },
+            "title": "Units"
           },
           {
             "name": "Value",
@@ -5826,15 +6348,15 @@
             "type": "string",
             "constraints": {
               "enum": [
-                "reading",
-                "math",
+                "SKILL_READ",
+                "SKILL_MATH",
                 ""
               ]
             },
             "title": "subject"
           },
           {
-            "name": "grade",
+            "name": "EDUCATION_LEV",
             "type": "string",
             "constraints": {
               "enum": [
@@ -5843,19 +6365,19 @@
                 ""
               ]
             },
-            "title": "grade"
+            "title": "EDUCATION_LEV"
           },
           {
-            "name": "sex",
+            "name": "SEX",
             "type": "string",
             "constraints": {
               "enum": [
-                "male",
-                "female",
+                "M",
+                "F",
                 ""
               ]
             },
-            "title": "sex"
+            "title": "SEX"
           },
           {
             "name": "Value",
@@ -6002,6 +6524,17 @@
             "title": "Año"
           },
           {
+            "name": "Units",
+            "type": "string",
+            "constraints": {
+              "enum": [
+                "Share",
+                ""
+              ]
+            },
+            "title": "Units"
+          },
+          {
             "name": "Value",
             "type": "number",
             "title": "Value"
@@ -6080,6 +6613,7 @@
               "enum": [
                 "md_inadqt_hs",
                 "sv_inadqt_hs",
+                "all_inadqt_hs",
                 ""
               ]
             },
